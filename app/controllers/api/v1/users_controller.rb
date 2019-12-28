@@ -1,6 +1,7 @@
 class Api::V1::UsersController < Api::V1::ApplicationController
 	before_action :authorize!
 	before_action :set_user, except: [:men, :women]
+	protect_from_forgery :except => [:create]
 
 	def men
 		if current_user.gender == 2

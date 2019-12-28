@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 			resource :sign_up, only: [:create]
 			resources :users, only: [:index, :show, :update] do
 				collection do
+					get :search
 					get :men
 					get :women
 				end

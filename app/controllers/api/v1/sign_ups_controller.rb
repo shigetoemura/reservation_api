@@ -1,5 +1,5 @@
 class Api::V1::SignUpsController < Api::V1::ApplicationController
-
+	protect_from_forgery :except => [:create]
 	def create
 		user = User.new(user_params)
 		user.save!
