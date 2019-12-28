@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 					get :women
 				end
 				member do
-					resources :blocks, only: [:create]
-					resources :reports, only: [:create]
+					post :blocks
+          			post :reports
 					resources :match_requests, only: [:create]
 				end
 			end
